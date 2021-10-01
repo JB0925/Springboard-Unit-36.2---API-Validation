@@ -24,7 +24,7 @@ class Book {
             WHERE isbn = $1`, [isbn]);
 
     if (bookRes.rows.length === 0) {
-      throw { message: `There is no book with an isbn '${isbn}`, status: 404 }
+      throw { message: `There is no book with an isbn ${isbn}`, status: 404 }
     }
 
     return bookRes.rows[0];
@@ -136,7 +136,7 @@ class Book {
     );
 
     if (result.rows.length === 0) {
-      throw { message: `There is no book with an isbn '${isbn}`, status: 404 }
+      throw { message: `There is no book with an isbn ${isbn}`, status: 404 }
     }
 
     return result.rows[0];
@@ -152,7 +152,7 @@ class Book {
         [isbn]);
 
     if (result.rows.length === 0) {
-      throw { message: `There is no book with an isbn '${isbn}`, status: 404 }
+      throw { message: `There is no book with an isbn ${isbn}`, status: 404 }
     }
   }
 }
